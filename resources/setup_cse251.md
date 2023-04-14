@@ -1,12 +1,16 @@
 # Setting up your development environment for CSE 251
 
 - [ ] [Install Visual Studio Code IDE](#install-vscode)
+- [ ] [Remove old Python](#remove-old-versions-of-python)
 - [ ] [Install Python](#install-python)
 - [ ] [Install Python Modules](#install-modules)
 - [ ] [Install Git](#install-git)
 
 ## <a name="install-vscode">Install Visual Studio Code IDE
 There are a number of IDEs [Integrated Development Environments](https://en.wikipedia.org/wiki/Integrated_development_environment) available to programmers. You are free to use any editor that you want.  However, the course will use Visual Studio Code as the editor in video examples and during class time.  VSCode can be downloaded at [VSCode](https://code.visualstudio.com).
+
+## Remove old versions of Python
+See [remove old versions of Python](remove-old-versions-of-python.md)
 
 ### Packages to install in VSCode 
 
