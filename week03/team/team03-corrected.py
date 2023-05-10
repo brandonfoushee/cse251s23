@@ -162,6 +162,7 @@ def main():
     # Make RawTurtle Object (built in Python class)
     main_turtle = turtle.Turtle()
     main_turtle.speed(0)
+    main_turtle.shape('turtle')
 
     # Customized CSE251 Turtle object
     turtle251 = SlowTurtle()

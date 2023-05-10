@@ -134,8 +134,9 @@ ITEMS = 1000000
 
 def thread_function(lock, data):
     for i in range(ITEMS):
-        with lock:
-            data[0] += 1
+        lock.acquire()
+        data[0] += 1
+        lock.release()
 
 def main():    
     lock = threading.Lock()

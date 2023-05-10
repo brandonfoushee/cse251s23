@@ -1,4 +1,4 @@
-![](../../../banner.png)
+![](../../banner.png)
 
 # 03 Team: Drawing Shapes 
 

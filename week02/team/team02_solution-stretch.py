@@ -80,7 +80,7 @@ if __name__ == '__main__':
 
     for i in range(5):
         deck.reshuffle()
-        cards = deck.draw_endless()
+        cards = deck.get_cards()
         print(f'New deck of cards (count={len(cards)}) {cards}')
 
     print()

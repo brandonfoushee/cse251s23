@@ -26,7 +26,6 @@ Instructions:
 
 
 import math
-import random
 import threading
 from turtle import RawTurtle
 from slow_turtles import *
@@ -100,7 +99,6 @@ def draw_squares(tur: SlowTurtle, lock: threading.Lock):
             lock.acquire()
             draw_square(tur, x - 50, y + 50, 100)
             lock.release()
-            time.sleep(random.uniform(0.1, 0.5))
 
 
 def draw_circles(tur: SlowTurtle, lock: threading.Lock):
@@ -110,7 +108,6 @@ def draw_circles(tur: SlowTurtle, lock: threading.Lock):
             lock.acquire()
             draw_circle(tur, x, y-2, 50)
             lock.release()
-            time.sleep(random.uniform(0.1, 0.5))
 
 
 def draw_triangles(tur: SlowTurtle, lock: threading.Lock):
@@ -120,7 +117,6 @@ def draw_triangles(tur: SlowTurtle, lock: threading.Lock):
             lock.acquire()
             draw_triangle(tur, x-30, y-30+10, 60)
             lock.release()
-            time.sleep(random.uniform(0.1, 0.5))
 
 
 def draw_rectangles(tur: SlowTurtle, lock: threading.Lock):
@@ -130,14 +126,12 @@ def draw_rectangles(tur: SlowTurtle, lock: threading.Lock):
             lock.acquire()
             draw_rectangle(tur, x-10, y+5, 20, 15)
             lock.release()
-            time.sleep(random.uniform(0.1, 0.5))
-
 
 def draw(tur: SlowTurtle, main_turtle: RawTurtle):
     """Draw different"""
-
+    
     start_time = time.perf_counter()
-
+    
     # Draw Coords system
     tur.pensize(0.5)
     draw_coord_system(tur, 0, 0, size=375)
@@ -148,9 +142,9 @@ def draw(tur: SlowTurtle, main_turtle: RawTurtle):
     tur.move(0, 0)
 
     # TODO - modify to make these draw in threads and not draw in order (meaning, that it shouldn't draw all the squares, then the circles, etc.). It might draw 4 of the same shapes at a time, but then it should draw a different shape. For advanced users, try and see if you can figure out a way for it to not draw 4 of the same shape, but draw a different shape each time (hint: random module).
-
+    
     lock = threading.Lock()
-
+    
     t1 = threading.Thread(target=draw_squares, args=(tur, lock))
     t1.start()
     t2 = threading.Thread(target=draw_circles, args=(tur, lock))
@@ -159,11 +153,12 @@ def draw(tur: SlowTurtle, main_turtle: RawTurtle):
     t3.start()
     t4 = threading.Thread(target=draw_rectangles, args=(tur, lock))
     t4.start()
-
+    
     t1.join()
     t2.join()
     t3.join()
     t4.join()
+    
 
     print('All drawing commands have been created')
 
@@ -178,7 +173,7 @@ def draw(tur: SlowTurtle, main_turtle: RawTurtle):
 
 def main():
     # Shouldn't need to modify any code in main
-
+    
     # create a Screen Object
     screen = turtle.Screen()
 
@@ -187,7 +182,7 @@ def main():
 
     # Make RawTurtle Object (built in Python class)
     main_turtle = turtle.Turtle()
-    main_turtle.speed(0)
+    main_turtle.speed(10)
     main_turtle.shape('turtle')
 
     # Customized CSE251 Turtle object
@@ -198,7 +193,6 @@ def main():
 
     # Waiting for user to close window
     turtle.done()
-
 
 if __name__ == "__main__":
     main()
