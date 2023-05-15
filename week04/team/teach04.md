@@ -23,7 +23,7 @@ Work on this for the remaining class time. If you can't complete it by the end o
 
 1. Use a semaphore to prevent errors from reading an empty queue (table).
 2. Use a semaphore to prevent too many items being added to the queue (table).
-3. Use a lock to prevent items (food) from being added/removed to/from the queue (table) at the same time by two threads (feeder/eater).
+3. (Optional) Use a lock to prevent items (food) from being added/removed to/from the queue (table) at the same time by two threads (feeder/eater).
 4. The number of food made must equal the number of food eaten.
 
 ## Sample Solution

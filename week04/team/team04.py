@@ -53,7 +53,8 @@ class Feeder(threading.Thread):
                  sem_mouth_full: threading.Semaphore,
                  sem_can_I_eat: threading.Semaphore,
                  table_queue,
-                 table_lock):
+                 table_lock,
+                 food_made):
 
         # Important - note that a class that extends another class
         # has to call the parent class's constructor (__init__):
