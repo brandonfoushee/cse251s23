@@ -9,3 +9,4 @@
 **/*.task
 **/*.class
 **/prove
+**/*-solution.py

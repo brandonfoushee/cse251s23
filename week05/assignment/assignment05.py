@@ -128,7 +128,8 @@ def run_production(manufacturer_count, dealer_count):
 
     # This is used to track the number of cars receives by each dealer
     dealer_stats = list([0] * dealer_count)
-
+    manufacturer_stats = list([0] * manufacturer_count)
+    
     # TODO create your manufacturers, each manufacturer will create CARS_TO_CREATE_PER_MANUFACTURER
 
     # TODO create your dealerships
@@ -142,8 +143,6 @@ def run_production(manufacturer_count, dealer_count):
     run_time = time.perf_counter() - begin_time
 
     # This function must return the following - only change the variable names, if necessary.
-    # manufacturer_stats: is a list of the number of cars produced by each manufacturer,
-    #                collect this information after the manufacturers are finished.
     return (run_time, car_queue.get_max_size(), dealer_stats, manufacturer_stats)
 
 
