@@ -94,7 +94,7 @@ class Manufacturer(threading.Thread):
 
         # TODO wait until all of the manufacturers are finished producing cars
 
-        # TODO "Wake up/signal" the dealerships one more time.
+        # TODO "Wake up/signal" the dealerships one more time. Send the stop flag.
         # Select one manufacturer to do this (hint: pass in and use the manufacturer_id)
         pass
 
@@ -123,8 +123,9 @@ def run_production(manufacturer_count, dealer_count):
 
     # TODO Create semaphore(s)
     # TODO Create queue
-    # TODO Create lock(s)
+    # TODO Create lock(s) -- if needed
     # TODO Create barrier(s)
+    barrier = threading.Barrier(manufacturer_count)
 
     # This is used to track the number of cars receives by each dealer
     dealer_stats = list([0] * dealer_count)

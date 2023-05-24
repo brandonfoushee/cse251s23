@@ -1,7 +1,7 @@
 **/code*.py
 .vscode/*
-**/attendance.png
-**/attendance.JPG
+**/attendance*.png
+**/attendance*.JPG
 **/__pycache__
 **/elephant
 **/green

@@ -129,7 +129,7 @@ bob: 123456
 After thread global_var = 123456
 ```
 
-In the output, you see that the thread was able to change the global variable while the process wasn't.  This is because the process, when created, gets it's own GIL and it's own copy of `global_var`.  This is different than the `global_var` in the main thread.  This is why it doesn't change.  Another reason not to use global variables.
+In the output, you see that the thread was able to change the global variable while the process wasn't.  This is because the process, when created, gets it's own GIL and its own copy of `global_var`.  This is different than the `global_var` in the main thread.  This is why it doesn't change.  Another reason not to use global variables.
 
 ## Process Pool and Map() function
 
